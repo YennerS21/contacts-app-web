@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //recuperar contactos recientes
+        $contacts = auth()->user()->contacts()->latest()->take(9)->get();
+
+        return view('home', compact('contacts'));
     }
 }
