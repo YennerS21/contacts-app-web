@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /*
+        Relacion (muchos a uno) con modelo Contact
+    */
+    public function contacts() {
+        return $this->hasMany(Contact::class);;
+    }
 }
