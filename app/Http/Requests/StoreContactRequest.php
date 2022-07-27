@@ -28,7 +28,7 @@ class StoreContactRequest extends FormRequest
             'phone_number' => 'required|numeric',
             'email' => 'required|email',
             'age' => 'nullable|numeric',
-            'profile_picture' => 'nullable|image',
+            'profile_picture' => 'image|nullable '
         ];
     }
 }

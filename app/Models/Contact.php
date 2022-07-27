@@ -16,6 +16,7 @@ class Contact extends Model
         'phone_number',
         'email',
         'age',
+        'profile_picture',
     ];
     /*
         Relacion(uno a muchos) con el modelo User 

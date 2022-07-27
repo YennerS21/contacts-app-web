@@ -10,8 +10,8 @@
             <div class="card-body">
               <div class="d-flex justify-content-center mb-2">
                 <a href="{{ route('contacts.show', $contact->id) }}">
-                  {{-- <img src="{{ Storage::url($contact->profile_picture) }}"
-                    class="profile-picture-home" /> --}}
+                  <img src="{{ Storage::url($contact->profile_picture) }}"
+                    class="profile-picture-home" />
                 </a>
               </div>
               <h3 class="card-title text-capitalize">

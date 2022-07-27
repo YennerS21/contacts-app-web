@@ -7,12 +7,12 @@
         <div class="card">
           <div class="card-header">Details Contact</div>
 
-          <div class="card-body d-flex ">
-            <div class="m-5">
+          <div class="card-body d-flex justify-content-around">
+            <div class="mt-5 mx-0">
               <img src="{{ Storage::url($contact->profile_picture) }}"
                 class="profile-picture-show" />
             </div>
-            <div>
+            <div class="mt-5 ">
               <p>Name: {{ $contact->name }}</p>
               <p>
                 Email:

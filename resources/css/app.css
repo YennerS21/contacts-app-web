@@ -6,3 +6,23 @@
   background-position: center center;
   background-size: cover;
 } 
+.profile-picture-home {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+}
+.profile-picture-index {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+.profile-picture-show {
+  border-radius: 50%;
+  width: 14rem;
+  height: 14rem;
+}
+.profile-picture-edit {
+  border-radius: 50%;
+  width: 12rem;
+  height: 12rem;
+}

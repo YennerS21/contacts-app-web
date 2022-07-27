@@ -38,7 +38,11 @@ class ContactController extends Controller
     public function store(StoreContactRequest $request)
     {
         $data = $request->validated(); 
-        auth()->user()->contacts()->create($data);
+        if ($request->hasFile('profile_picture')) {
+            $path=$request->file('profile_picture')->store('profiles','public');
+            $data['profile_picture']=$path;
+        }
+        $contact = auth()->user()->contacts()->create($data);
         return redirect()->route('home');
     }
 
