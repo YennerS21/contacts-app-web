@@ -50,6 +50,6 @@
         </div>
       </div>
     @endforelse
-    {{-- {{ $contacts->links() }} --}}
+    {{ $contacts->links() }}
   </div>
 @endsection
