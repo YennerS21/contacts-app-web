@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\UpdateContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -75,9 +76,15 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(UpdateContactRequest $request, Contact $contact)
     {
-        //
+        $data = $request->validated();
+        if ($request->hasFile('profile_picture')) {
+            $path=$request->file('profile_picture')->store('profiles','public');
+            $data['profile_picture']=$path;
+        }
+        $contact=$contact->update($data);
+        return redirect()->route('home');
     }
 
     /**
@@ -88,6 +95,7 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+        return redirect()->route('home');
     }
 }
